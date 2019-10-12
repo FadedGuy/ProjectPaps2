@@ -5,6 +5,9 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
   { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule' },
+  { path: 'calendar', loadChildren: './pages/calendar/calendar.module#CalendarPageModule' },
+  { path: 'tareas', loadChildren: './pages/tareas/tareas.module#TareasPageModule' },
+  { path: 'horario', loadChildren: './pages/horario/horario.module#HorarioPageModule' },
 ];
 
 @NgModule({
