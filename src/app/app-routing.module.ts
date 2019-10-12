@@ -2,12 +2,28 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
-  { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule' },
-  { path: 'calendar', loadChildren: './pages/calendar/calendar.module#CalendarPageModule' },
-  { path: 'tareas', loadChildren: './pages/tareas/tareas.module#TareasPageModule' },
-  { path: 'horario', loadChildren: './pages/horario/horario.module#HorarioPageModule' },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
+  },
+  {
+    path: 'list',
+    loadChildren: () => import('./pages/menu/menu.module').then(m => m.MenuPageModule)
+  },
+  {
+    path: 'calendar',
+    loadChildren: () => import('./pages/calendar/calendar.module').then(m => m.CalendarPageModule)
+  },
+  {
+    path: 'horario',
+    loadChildren: () => import('./pages/horario/horario.module').then(m => m.HorarioPageModule)
+  }
+
 ];
 
 @NgModule({
@@ -16,4 +32,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
