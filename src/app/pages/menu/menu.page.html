@@ -9,7 +9,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content
+    [scrollEvents]="true"
+    (ionScrollStart)="logScrollStart()"
+    (ionScroll)="logScrolling($event)"
+    (ionScrollEnd)="logScrollEnd()">
     <!-- Botón añadir tarea -->
     <ion-fab vertical="bottom" horizontal="end" slot="fixed" size="small">
         <ion-fab-button>
@@ -20,8 +24,8 @@
           <ion-fab-button>
              <ion-icon name="trash"></ion-icon>
           </ion-fab-button>
-          <ion-fab-button>
-              <ion-icon name="add" (click)="addhw()"></ion-icon>
+          <ion-fab-button href="tareas">
+              <ion-icon name="add" ></ion-icon>
            </ion-fab-button>
 
 

@@ -2,25 +2,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 import { Component, Input } from '@angular/core';
-import { NavParams } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 
-@Component({
-  selector: 'modal-page',
-})
-export class ModalPage {
-  constructor(public modalController: ModalController) {
 
-  }
-
-  async presentModal() {
-    const modal = await this.modalController.create({
-      component: ModalPage,
-
-    });
-    return await modal.present();
-  }
-
-}
 
 @Component({
   selector: 'app-list',
@@ -37,7 +21,7 @@ export class MenuPage implements OnInit {
   ];
   public items: Array_Tareas <{ title: string; note: string; icon: string }> = [];
   constructor() {
-    for (let i = 1; i < 4; i++) {
+    for (let i = 1; i < 5; i++) {
       this.items.push({
         title: 'Tarea ' + i,
         note: 'Descripcion de la tarea ' + i,
@@ -45,18 +29,18 @@ export class MenuPage implements OnInit {
       });
     }
   }
+  openModal()
+  {
+    
+  }
   showAdd()
   {
 
   }
 
-   addhw ()
+  openTareas ()
   {
-    this.items.push({
-      title: 'Prueba boton add',
-      note: 'Ver que detecte el click' ,
-      icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-    });
+    console.log("add tarea click");
     
   };
 
