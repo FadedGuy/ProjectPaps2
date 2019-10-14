@@ -26,7 +26,11 @@ const routes: Routes = [
   {
     path: 'tareas',
     loadChildren: () => import('./pages/tareas/tareas.module').then(m => m.TareasPageModule)
-  }
+  },
+  { path: 'profesores', 
+  loadChildren: () => import('./pages/profesores/profesores.module').then(m => m.ProfesoresPageModule)
+}
+  
 
 ];
 
