@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./horario.page.scss'],
 })
 export class HorarioPage implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
