@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tareas.page.scss'],
 })
 export class TareasPage implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
