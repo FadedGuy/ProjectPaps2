@@ -26,7 +26,11 @@ const routes: Routes = [
   {
     path: 'menu',
     loadChildren: () => import('./pages/menu/menu.module').then(m => m.MenuPageModule)
-  }
+  },
+  { path: 'profesores', 
+  loadChildren: () => import('./pages/profesores/profesores.module').then(m => m.ProfesoresPageModule)
+}
+  
 
 
 ];

@@ -58,6 +58,11 @@ export class AppComponent {
       title: 'Horario',
       url: '/horario',
       icon: 'time'
+    },
+    {
+      title: 'Profesores',
+      url: '/profesores',
+      icon: 'person'
     }
   ];
 
