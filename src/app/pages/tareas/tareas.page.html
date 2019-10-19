@@ -12,32 +12,23 @@
   <ion-content>
       <ion-list>
         <!--Inputs-->
-          <ion-item>
-            <ion-input placeholder="Nombre"></ion-input>
+          <ion-item> 
+            <ion-input placeholder="Nombre" [(ngModel)]="name"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input placeholder="Descripción"></ion-input>
+            <ion-input placeholder="Descripción" [(ngModel)]="description"></ion-input>
           </ion-item>
           <ion-item-divider></ion-item-divider>
           <!--Fechas-->
           <ion-item>
-            <ion-label>Fecha inicio</ion-label>
-            <ion-datetime value="2001-02-13" placeholder="Select Date"></ion-datetime>
-          </ion-item>
-          <ion-item>
-              <ion-label>Fecha fin</ion-label>
-              <ion-datetime value="2001-02-13" placeholder="Select Date"></ion-datetime>
+            <ion-label>Fecha de entrega</ion-label>
+            <ion-datetime done-text="Listo" cancel-text="Cancelar" value="string" placeholder="Selecciona una fecha" [(ngModel)]="date"></ion-datetime>
           </ion-item>
           <!--Horas-->
           <ion-item>
-            <ion-label> Hora de inicio</ion-label>
-            <ion-datetime display-format="h:mm A" picker-format="h:mm A" value="1990-02-19T07:43Z"></ion-datetime>
+            <ion-label> Hora de entrega</ion-label>
+            <ion-datetime done-text="Listo" cancel-text="Cancelar" display-format="h:mm A" picker-format="h:mm A" value="string" placeholder="Selecciona una hora" [(ngModel)]="time"></ion-datetime>
           </ion-item>
-          <ion-item>
-              <ion-label> Hora de fin</ion-label>
-              <ion-datetime display-format="h:mm A" picker-format="h:mm A" value="1990-02-19T07:43Z"></ion-datetime>
-            </ion-item>
-            <ion-item-divider></ion-item-divider>
           <!--Materias-->
           <!--Kevin, no se si pueda obtener la info para opciones de lo que metan en el horario-->
           <ion-item>
@@ -45,7 +36,7 @@
           </ion-item>
           <!--Boton confirmar todo listo-->
           <ion-fab vertical="bottom" horizontal="end" slot="fixed" size="small">
-              <ion-fab-button>
+              <ion-fab-button (click)="tareasConfirmar()" href="menu">
                 <!--Falta hacer la funcion para que tome los datos de lo arriba y cree la tarea-->
                 <ion-icon name="checkmark"></ion-icon>
               </ion-fab-button>

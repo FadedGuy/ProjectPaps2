@@ -8,4 +8,22 @@
 
     Y asi dentro del ts puedes usarlo como una variable normal usando la siguiente sintaxis:
     NombreDeClase.stringInicio;
-*/
+*/  
+
+export class Tareas{
+    nameTarea = "";
+    descripcionTareas = "";
+    dia = "";
+    mes = "";
+    anio = "";
+    hora = "";
+    minuto = "";
+}
+
+export class arrTareas{
+    static tareaArr: Tareas[] = [];
+}
+
+export class arrTareasString{
+    static tareaName: string[] = [];
+}

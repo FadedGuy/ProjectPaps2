@@ -1,7 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { ModalController } from '@ionic/angular';
-
-
+import { arrTareasString } from '../../allVars';
 
 @Component({
   selector: 'app-list',
@@ -16,15 +15,14 @@ export class MenuPage implements OnInit {
     'time',
     'clipboard'
   ];
-  public items: Array <{ title: string; note: string; icon: string }> = [];
+
+  items: any;
+
   constructor() {
-    for (let i = 1; i < 5; i++) {
-      this.items.push({
-        title: 'Tarea ' + i,
-        note: 'Descripcion de la tarea ' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-      });
-    }
+    arrTareasString.tareaName.push("hola");
+    arrTareasString.tareaName.push("hola1");
+    arrTareasString.tareaName.push("hola2");
+    this.items = arrTareasString.tareaName;
   }
   openModal()
   {
@@ -38,7 +36,6 @@ export class MenuPage implements OnInit {
   openTareas ()
   {
     console.log("add tarea click");
-    
   };
 
   ngOnInit() {

@@ -46,8 +46,8 @@ export class AppComponent {
     },
     {
       title: 'Tareas',
-      url: '/list',
-      icon: 'list'
+      url: '/menu',
+      icon: 'menu'
     },
     {
       title: 'Calendario',
