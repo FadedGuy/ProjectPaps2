@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  imageManuel: string = "https://i.ibb.co/R0pRTPT/ICONOFINALPNG.png";
   
   constructor() {
   }
