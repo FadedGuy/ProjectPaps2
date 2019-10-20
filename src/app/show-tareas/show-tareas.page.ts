@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Tareas, arrTareas, arrTareasString } from '../allVars';
+
 
 @Component({
   selector: 'app-show-tareas',
