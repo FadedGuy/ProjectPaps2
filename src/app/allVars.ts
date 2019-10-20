@@ -26,6 +26,12 @@ export class arrTareas{
 
 export class arrTareasString{
     static tareaName: string[] = [];
+    static descripcionTareas: string[] = [];
+    static dia: string[] = [];
+    static mes: string[] = [];
+    static anio: string[] = [];
+    static hora: string[] = [];
+    static minuto: string[] = [];
 }
 
 export class Profesores{
