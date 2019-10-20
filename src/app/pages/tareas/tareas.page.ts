@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Tareas, arrTareas, arrTareasString } from '../../allVars';
 import { Router } from '@angular/router';
+import { AlertController, NavController } from '@ionic/angular';
+
+
 
 @Component({
   selector: 'app-tareas',
@@ -8,6 +11,44 @@ import { Router } from '@angular/router';
   styleUrls: ['./tareas.page.scss'],
 })
 export class TareasPage implements OnInit {
+  constructor(public alertController: AlertController, private navCtrl: NavController ) { }
+  presionado: boolean;
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+
+      header: 'Alerta',
+      subHeader: 'Volver',
+      message: '¿Seguro que desea volver sin guardar cambios?',
+      buttons: [
+        {
+            text: 'OK',
+            handler: () => {
+              console.log('Confirm OK');
+              this.presionado = true;
+              this.navCtrl.navigateBack('/menu');
+            }
+          },{
+            text: 'Cancelar',
+            role: 'cancel',
+            cssClass: 'secondary',
+            handler: () => {
+              this.presionado = false;
+            }
+          }
+      ]
+    });
+    
+
+    await alert.present();
+
+    
+
+  }
+
+
+
+
   router: Router;
 
   name: string;
@@ -20,7 +61,7 @@ export class TareasPage implements OnInit {
 
   tareaAux: Tareas;
 
-  constructor() { }
+  
 
   ngOnInit() {
   }

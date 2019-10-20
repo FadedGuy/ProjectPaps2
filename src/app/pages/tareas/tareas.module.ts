@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -23,4 +24,10 @@ const routes: Routes = [
   ],
   declarations: [TareasPage]
 })
-export class TareasPageModule {}
+
+
+export class TareasPageModule {
+
+  constructor(){}
+
+}
