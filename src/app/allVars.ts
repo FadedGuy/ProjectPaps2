@@ -32,6 +32,8 @@ export class arrTareasString{
     static anio: string[] = [];
     static hora: string[] = [];
     static minuto: string[] = [];
+
+    static indexSel: number;
 }
 
 export class Profesores{

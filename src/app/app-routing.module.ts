@@ -32,7 +32,11 @@ const routes: Routes = [
   },
   { path: 'addprofesores',
     loadChildren: () => import('./pages/addprofesores/addprofesores.module').then(m => m.AddprofesoresPageModule)
-  }
+  },
+  { path: 'show-tareas', 
+    loadChildren: () => import('./show-tareas/show-tareas.module').then(m => m.ShowTareasPageModule)
+}
+
   
 
 
