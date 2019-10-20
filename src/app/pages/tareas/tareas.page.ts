@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Tareas, arrTareas, arrTareasString } from '../../allVars';
 import { Router } from '@angular/router';
+import { AlertController, NavController } from '@ionic/angular';
+
+
 
 @Component({
   selector: 'app-tareas',
@@ -8,26 +11,57 @@ import { Router } from '@angular/router';
   styleUrls: ['./tareas.page.scss'],
 })
 export class TareasPage implements OnInit {
+  constructor(public alertController: AlertController, private navCtrl: NavController ) { }
+  presionado: boolean;
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+
+      header: 'Alerta',
+      subHeader: 'Volver',
+      message: '¿Seguro que desea volver sin guardar cambios?',
+      buttons: [
+        {
+            text: 'OK',
+            handler: () => {
+              console.log('Confirm OK');
+              this.presionado = true;
+              this.navCtrl.navigateBack('/menu');
+            }
+          },{
+            text: 'Cancelar',
+            role: 'cancel',
+            cssClass: 'secondary',
+            handler: () => {
+              this.presionado = false;
+            }
+          }
+      ]
+    });
+    
+
+    await alert.present();
+
+    
+
+  }
+
+
+
+
   router: Router;
 
-  name: string = "";
+  name: string;
   description: string;
   date: string = "";
   time: string = "";
 
-  day: string = "";
-  month: string = "";
-  year: string = "";
-  hour: string = "";
-  minute: string = "";
-
   guion = 0; 
   data = "";
 
+  tareaAux: Tareas;
 
-  confirmMessage: boolean;
-
-  constructor() { }
+  
 
   ngOnInit() {
   }
@@ -40,13 +74,13 @@ export class TareasPage implements OnInit {
           this.guion++;
           switch(this.guion){
             case 1:
-              this.year = this.data;
+              this.tareaAux.anio = this.data;
               break;
             case 2:
-              this.month = this.data;
+              this.tareaAux.mes = this.data;
               break;
             case 3:
-              this.day = this.data;
+              this.tareaAux.dia = this.data;
               break;
           }
           this.data = "";
@@ -68,10 +102,10 @@ export class TareasPage implements OnInit {
           this.guion++;
           switch(this.guion){
             case 2:
-              this.hour = this.data;
+              this.tareaAux.hora = this.data;
               break;
             case 3:
-              this.minute = this.data;
+              this.tareaAux.minuto = this.data;
               break;
           }
           this.data = "";
@@ -90,26 +124,9 @@ export class TareasPage implements OnInit {
     alert("Se ha registrado la tarea " + this.name + " de manera exitosa!");
 
     arrTareasString.tareaName.push(this.name);
-    arrTareasString.descripcionTareas.push(this.description);
-    arrTareasString.dia.push(this.day);
-    arrTareasString.mes.push(this.month);
-    arrTareasString.anio.push(this.year);
-    arrTareasString.hora.push(this.hour);
-    arrTareasString.minuto.push(this.minute);
-
     console.log(arrTareasString.tareaName);
-    console.log(arrTareasString.hora);
-    }
 
-  tareasReturn(){
-    if(this.name != ""){
-      this.confirmMessage = confirm("Estas seguro que quieres salir, tu progreso no se guardara");
-      if(this.confirmMessage){
-        //OK, regresar
-      }
-      else{
-        //Quedarse
-      }
-    }
+    //De alguna manera deberia de regresarte a la pagina de tareas pero paso de hacerlo
   }
+
 }
