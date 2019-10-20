@@ -42,7 +42,7 @@ export class MenuPage implements OnInit {
   }
   
   hola(){
-    arrTareasString.indexSel = -1+1;
+    arrTareasString.indexSel = 0;
     //0 En este caso pero deberia de ser el index de la opcion seleccionada
     this.navCtrl.navigateBack('/show-tareas');
   }

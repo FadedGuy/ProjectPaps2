@@ -33,7 +33,7 @@ export class arrTareasString{
     static hora: string[] = [];
     static minuto: string[] = [];
 
-    static indexSel: number;
+    static indexSel: number = 0;
 }
 
 export class Profesores{

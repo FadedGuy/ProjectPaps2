@@ -51,7 +51,7 @@ export class TareasPage implements OnInit {
 
   router: Router;
 
-  name: string;
+  name: string = "";
   description: string;
   date: string = "";
   time: string = "";
@@ -59,9 +59,11 @@ export class TareasPage implements OnInit {
   guion = 0; 
   data = "";
 
-  tareaAux: Tareas;
-
-  
+  day: string = "";
+  month: string = "";
+  year: string = "";
+  hour: string = "";
+  minute: string = "";
 
   ngOnInit() {
   }
@@ -74,13 +76,13 @@ export class TareasPage implements OnInit {
           this.guion++;
           switch(this.guion){
             case 1:
-              this.tareaAux.anio = this.data;
+              this.year = this.data;
               break;
             case 2:
-              this.tareaAux.mes = this.data;
+              this.month = this.data;
               break;
             case 3:
-              this.tareaAux.dia = this.data;
+              this.day = this.data;
               break;
           }
           this.data = "";
@@ -102,10 +104,10 @@ export class TareasPage implements OnInit {
           this.guion++;
           switch(this.guion){
             case 2:
-              this.tareaAux.hora = this.data;
+              this.hour = this.data;
               break;
             case 3:
-              this.tareaAux.minuto = this.data;
+              this.minute = this.data;
               break;
           }
           this.data = "";
@@ -122,10 +124,14 @@ export class TareasPage implements OnInit {
 
 
     alert("Se ha registrado la tarea " + this.name + " de manera exitosa!");
-
     arrTareasString.tareaName.push(this.name);
-    console.log(arrTareasString.tareaName);
-
+    arrTareasString.descripcionTareas.push(this.description);
+    arrTareasString.dia.push(this.day);
+    arrTareasString.mes.push(this.month);
+    arrTareasString.anio.push(this.year);
+    arrTareasString.hora.push(this.hour);
+    arrTareasString.minuto.push(this.minute);
+    
     //De alguna manera deberia de regresarte a la pagina de tareas pero paso de hacerlo
   }
 
