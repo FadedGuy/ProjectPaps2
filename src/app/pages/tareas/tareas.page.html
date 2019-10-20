@@ -1,6 +1,6 @@
 <ion-header>
     <ion-toolbar>
-  <ion-button shape="round">
+  <ion-button shape="round"[routerLink]="['/menu']">
     <ion-icon slot="start" name="arrow-dropleft"></ion-icon>
   </ion-button>
       <ion-title>
@@ -36,7 +36,7 @@
           </ion-item>
           <!--Boton confirmar todo listo-->
           <ion-fab vertical="bottom" horizontal="end" slot="fixed" size="small">
-              <ion-fab-button (click)="tareasConfirmar()" href="menu">
+              <ion-fab-button (click)="tareasConfirmar()" [routerLink]="['/menu']">
                 <!--Falta hacer la funcion para que tome los datos de lo arriba y cree la tarea-->
                 <ion-icon name="checkmark"></ion-icon>
               </ion-fab-button>

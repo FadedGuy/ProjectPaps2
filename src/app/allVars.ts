@@ -27,3 +27,9 @@ export class arrTareas{
 export class arrTareasString{
     static tareaName: string[] = [];
 }
+
+export class Profesores{
+    nameProfe = "";
+    claseProf = "";
+    correo = "";
+}

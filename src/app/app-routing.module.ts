@@ -29,7 +29,10 @@ const routes: Routes = [
   },
   { path: 'profesores', 
   loadChildren: () => import('./pages/profesores/profesores.module').then(m => m.ProfesoresPageModule)
-}
+  },
+  { path: 'addprofesores',
+    loadChildren: () => import('./pages/addprofesores/addprofesores.module').then(m => m.AddprofesoresPageModule)
+  }
   
 
 

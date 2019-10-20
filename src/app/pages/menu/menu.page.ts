@@ -19,9 +19,9 @@ export class MenuPage implements OnInit {
   items: any;
 
   constructor() {
-    arrTareasString.tareaName.push("hola");
-    arrTareasString.tareaName.push("hola1");
-    arrTareasString.tareaName.push("hola2");
+    //arrTareasString.tareaName.push("hola");
+    //arrTareasString.tareaName.push("hola1");
+    //arrTareasString.tareaName.push("hola2");
     this.items = arrTareasString.tareaName;
   }
   openModal()

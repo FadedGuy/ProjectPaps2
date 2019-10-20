@@ -1,14 +1,59 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <ion-title>
-        Profesores
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Profesores
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
-<ion-content>
+<ion-content
+    [scrollEvents]="true"
+    (ionScrollStart)="logScrollStart()"
+    (ionScroll)="logScrolling($event)"
+    (ionScrollEnd)="logScrollEnd()">
+    <!-- Botón añadir tarea -->
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" size="small">
+        <ion-fab-button>
+          <ion-icon name="create"></ion-icon>
+        </ion-fab-button>
+        <!--Opciones del botón-->
+        <ion-fab-list side="top">
+          <ion-fab-button>
+             <ion-icon name="trash"></ion-icon>
+          </ion-fab-button>
+          <ion-fab-button [routerLink]="['/addprofesores']">
+              <ion-icon name="add" ></ion-icon>
+           </ion-fab-button>
 
+
+        </ion-fab-list>
+
+
+
+      </ion-fab>
+
+    <!--Lista de tareas-->
+    
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+        <ion-item-sliding>
+          
+          <ion-item>
+              <ion-label>
+                  {{item}}
+              </ion-label>
+          </ion-item>
+          
+          <ion-item-options>
+            <button color="danger" >Borrar<ion-icon name="trash"></ion-icon></button>
+          </ion-item-options>
+          
+          </ion-item-sliding>
+
+    </ion-item>
+  </ion-list>
 </ion-content>
+
