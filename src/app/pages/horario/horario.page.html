@@ -23,6 +23,9 @@
         <ion-col>
             <ion-item color="primary" *ngFor="let LHitem of LHitems">{{ LHitem }}</ion-item>
         </ion-col>
+        <ion-col>
+          <ion-item color="secondary" *ngFor="let LHFitem of LHFitems">{{ LHFitem }}</ion-item>
+      </ion-col>
     </ion-row>
     </ion-grid>
   </ion-list>
@@ -39,6 +42,9 @@
       <ion-col>
           <ion-item color="primary" *ngFor="let MAHitem of MAHitems">{{ MAHitem }}</ion-item>
       </ion-col>
+      <ion-col>
+        <ion-item color="secondary" *ngFor="let MAHFitem of MAHFitems">{{ MAHFitem }}</ion-item>
+    </ion-col>
       </ion-row>
       </ion-grid>
     </ion-list>
@@ -49,12 +55,15 @@
             <ion-row>
               <ion-col>
         <ion-item-group reorder="true" (ionItemReorder)="reorderItems($event)">
-          <ion-item *ngFor="let MIitem of MIitems">{{ MIitem }}</ion-item>
+            <ion-item *ngFor="let MIitem of MIitems">{{ MIitem }}</ion-item>
         </ion-item-group>
         </ion-col>
         <ion-col>
             <ion-item color="primary" *ngFor="let MIHitem of MIHitems">{{ MIHitem }}</ion-item>
         </ion-col>
+        <ion-col>
+          <ion-item color="secondary" *ngFor="let MIHFitem of MIHFitems">{{ MIHFitem }}</ion-item>
+      </ion-col>
         </ion-row>
         </ion-grid>
       </ion-list>
@@ -71,6 +80,9 @@
           <ion-col>
               <ion-item color="primary" *ngFor="let JHitem of JHitems">{{ JHitem }}</ion-item>
           </ion-col>
+          <ion-col>
+            <ion-item color="secondary" *ngFor="let JHFitem of JHFitems">{{ JHFitem }}</ion-item>
+        </ion-col>
           </ion-row>
           </ion-grid>
         </ion-list>
@@ -87,6 +99,9 @@
             <ion-col>
                 <ion-item color="primary" *ngFor="let VHitem of VHitems">{{ VHitem }}</ion-item>
             </ion-col>
+            <ion-col>
+              <ion-item color="secondary" *ngFor="let VHFitem of VHFitems">{{ VHFitem }}</ion-item>
+          </ion-col>
             </ion-row>
             </ion-grid>
           </ion-list>

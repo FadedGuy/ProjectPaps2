@@ -48,6 +48,12 @@ export class Clase{
     static MIhoraArr: Clase[] = [];
     static JhoraArr: Clase[] = [];
     static VhoraArr: Clase[] = [];
+
+    static LhoraFArr: Clase[] = [];
+    static MAhoraFArr: Clase[] = [];
+    static MIhoraFArr: Clase[] = [];
+    static JhoraFArr: Clase[] = [];
+    static VhoraFArr: Clase[] = [];
 }
 export class Profes{
     static nameProfe: string []=[] ;

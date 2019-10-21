@@ -49,15 +49,15 @@ export class AddprofesoresPage implements OnInit {
 
   ngOnInit() {
   }
-  nombre: string ="";
-  clase: string ="";
+  name: string ="";
+  description: string ="";
   correo: string ="";
 
   profesoresConfirmar()
   {
 
-    Profes.nameProfe.push(this.nombre);
-    Profes.claseProf.push(this.clase);
+    Profes.nameProfe.push(this.name);
+    Profes.claseProf.push(this.description);
     Profes.correo.push(this.correo);
 
 
