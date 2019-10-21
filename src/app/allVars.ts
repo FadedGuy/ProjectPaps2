@@ -33,3 +33,17 @@ export class Profesores{
     claseProf = "";
     correo = "";
 }
+
+export class Clase{
+    static LclaseArr: Clase[] = [];
+    static MAclaseArr: Clase[] = [];
+    static MIclaseArr: Clase[] = [];
+    static JclaseArr: Clase[] = [];
+    static VclaseArr: Clase[] = [];
+    
+    static LhoraArr: Clase[] = [];
+    static MAhoraArr: Clase[] = [];
+    static MIhoraArr: Clase[] = [];
+    static JhoraArr: Clase[] = [];
+    static VhoraArr: Clase[] = [];
+}

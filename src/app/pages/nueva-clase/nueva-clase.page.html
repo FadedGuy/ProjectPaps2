@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+<ion-button shape="round"[routerLink]="['/horario']">
+  <ion-icon slot="start" name="arrow-dropleft"></ion-icon>
+</ion-button>
+    <ion-title>
+      Nueva clase
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+      <!--Inputs-->
+        <ion-item> 
+          <ion-input placeholder="Clase" [(ngModel)]="clase"></ion-input>
+        </ion-item>
+        <ion-item> 
+          <ion-input placeholder="Hora de inicio 00:00" [(ngModel)]="hora"></ion-input>
+          </ion-item>
+        <p>Seleccione el día</p>
+          <ion-button shape="round"(click)=Lanadir(); [routerLink]="['/horario']">
+      Lunes
+    </ion-button>
+
+    <ion-button shape="round"(click)=MAanadir(); [routerLink]="['/horario']">
+      Martes
+    </ion-button>
+
+    <ion-button shape="round"(click)=MIanadir(); [routerLink]="['/horario']">
+      Miercoles
+    </ion-button>
+
+    <ion-button shape="round"(click)=Janadir(); [routerLink]="['/horario']">
+      Jueves
+    </ion-button>
+
+    <ion-button shape="round"(click)=Vanadir(); [routerLink]="['/horario']">
+      Viernes
+    </ion-button>
+</ion-content>
+

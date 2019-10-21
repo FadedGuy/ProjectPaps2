@@ -11,4 +11,89 @@
 
 <ion-content>
 
+  <ion-list>
+    <ion-list-header>Lunes</ion-list-header>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+    <ion-item-group reorder="true" (ionItemReorder)="reorderItems($event)">
+      <ion-item *ngFor="let Litem of Litems">{{ Litem }}</ion-item>
+    </ion-item-group>
+      </ion-col>
+        <ion-col>
+            <ion-item color="primary" *ngFor="let LHitem of LHitems">{{ LHitem }}</ion-item>
+        </ion-col>
+    </ion-row>
+    </ion-grid>
+  </ion-list>
+
+  <ion-list>
+      <ion-list-header>Martes</ion-list-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+      <ion-item-group reorder="true" (ionItemReorder)="reorderItems($event)">
+        <ion-item *ngFor="let MAitem of MAitems">{{ MAitem }}</ion-item>
+      </ion-item-group>
+      </ion-col>
+      <ion-col>
+          <ion-item color="primary" *ngFor="let MAHitem of MAHitems">{{ MAHitem }}</ion-item>
+      </ion-col>
+      </ion-row>
+      </ion-grid>
+    </ion-list>
+
+    <ion-list>
+        <ion-list-header>Miercoles</ion-list-header>
+        <ion-grid>
+            <ion-row>
+              <ion-col>
+        <ion-item-group reorder="true" (ionItemReorder)="reorderItems($event)">
+          <ion-item *ngFor="let MIitem of MIitems">{{ MIitem }}</ion-item>
+        </ion-item-group>
+        </ion-col>
+        <ion-col>
+            <ion-item color="primary" *ngFor="let MIHitem of MIHitems">{{ MIHitem }}</ion-item>
+        </ion-col>
+        </ion-row>
+        </ion-grid>
+      </ion-list>
+
+      <ion-list>
+          <ion-list-header>Jueves</ion-list-header>
+          <ion-grid>
+              <ion-row>
+                <ion-col>
+          <ion-item-group reorder="true" (ionItemReorder)="reorderItems($event)">
+            <ion-item *ngFor="let Jitem of Jitems">{{ Jitem }}</ion-item>
+          </ion-item-group>
+          </ion-col>
+          <ion-col>
+              <ion-item color="primary" *ngFor="let JHitem of JHitems">{{ JHitem }}</ion-item>
+          </ion-col>
+          </ion-row>
+          </ion-grid>
+        </ion-list>
+
+        <ion-list>
+            <ion-list-header>Viernes</ion-list-header>
+            <ion-grid>
+                <ion-row>
+                  <ion-col>
+            <ion-item-group reorder="true" (ionItemReorder)="reorderItems($event)">
+              <ion-item *ngFor="let Vitem of Vitems">{{ Vitem }}</ion-item>
+            </ion-item-group>
+            </ion-col>
+            <ion-col>
+                <ion-item color="primary" *ngFor="let VHitem of VHitems">{{ VHitem }}</ion-item>
+            </ion-col>
+            </ion-row>
+            </ion-grid>
+          </ion-list>
+
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+          <ion-fab-button [routerLink]="['/nueva-clase']">
+            <ion-icon name="add"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
 </ion-content>
