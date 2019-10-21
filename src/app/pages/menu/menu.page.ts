@@ -41,9 +41,14 @@ export class MenuPage implements OnInit {
   ngOnInit() {
   }
   
-  hola(){
-    arrTareasString.indexSel = 0;
+  hola(index){
+    arrTareasString.indexSel = index;
     //0 En este caso pero deberia de ser el index de la opcion seleccionada
     this.navCtrl.navigateBack('/show-tareas');
+  }
+
+  clickDel(){
+    alert("Selecciona la tarea que desees eliminar");
+    
   }
 }
