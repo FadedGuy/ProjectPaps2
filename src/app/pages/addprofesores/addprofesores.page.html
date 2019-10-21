@@ -27,7 +27,7 @@
         </ion-item>
         <!--Boton confirmar todo listo-->
         <ion-fab vertical="bottom" horizontal="end" slot="fixed" size="small">
-            <ion-fab-button  [routerLink]="['/profesores']">
+            <ion-fab-button (click)= "profesoresConfirmar()" [routerLink]="['/profesores']">
               <!--Falta hacer la funcion para que tome los datos de lo arriba y cree la tarea-->
               <ion-icon name="checkmark"></ion-icon>
             </ion-fab-button>

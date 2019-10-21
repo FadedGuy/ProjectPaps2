@@ -121,8 +121,7 @@ export class TareasPage implements OnInit {
     else{
       console.log("No se ha ingresado fecha de entrega");
     }
-
-
+    
     alert("Se ha registrado la tarea " + this.name + " de manera exitosa!");
     arrTareasString.tareaName.push(this.name);
     arrTareasString.descripcionTareas.push(this.description);

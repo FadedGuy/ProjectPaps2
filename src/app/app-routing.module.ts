@@ -35,7 +35,8 @@ const routes: Routes = [
   },
   { path: 'show-tareas', 
     loadChildren: () => import('./show-tareas/show-tareas.module').then(m => m.ShowTareasPageModule)
-}
+},  { path: 'shoe-profesores', loadChildren: './shoe-profesores/shoe-profesores.module#ShoeProfesoresPageModule' }
+
 
   
 

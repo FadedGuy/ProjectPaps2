@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, NavController } from '@ionic/angular';
+import { Profes } from '../../allVars';
 
 @Component({
   selector: 'app-addprofesores',
@@ -39,7 +40,7 @@ export class AddprofesoresPage implements OnInit {
     
 
     await alert.present();
-
+    
     
 
   }
@@ -48,5 +49,17 @@ export class AddprofesoresPage implements OnInit {
 
   ngOnInit() {
   }
+  nombre: string ="";
+  clase: string ="";
+  correo: string ="";
 
+  profesoresConfirmar()
+  {
+
+    Profes.nameProfe.push(this.nombre);
+    Profes.claseProf.push(this.clase);
+    Profes.correo.push(this.correo);
+
+
+  }
 }
