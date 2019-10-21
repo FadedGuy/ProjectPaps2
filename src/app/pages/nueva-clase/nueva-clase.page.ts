@@ -11,7 +11,9 @@ export class NuevaClasePage implements OnInit {
 
   ngOnInit() {
   }
-
+  
+hora :any;
+clase:any;
 
 Lanadir(){
   console.log(this);
