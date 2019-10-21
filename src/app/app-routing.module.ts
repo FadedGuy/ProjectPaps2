@@ -33,8 +33,18 @@ const routes: Routes = [
   { path: 'addprofesores',
     loadChildren: () => import('./pages/addprofesores/addprofesores.module').then(m => m.AddprofesoresPageModule)
   },
-  { path: 'nueva-clase', loadChildren: './pages/nueva-clase/nueva-clase.module#NuevaClasePageModule' }
+  { path: 'nueva-clase', 
+  loadChildren: './pages/nueva-clase/nueva-clase.module#NuevaClasePageModule' 
+  },
   
+  { path: 'show-tareas', 
+    loadChildren: () => import('./show-tareas/show-tareas.module').then(m => m.ShowTareasPageModule)
+  },
+  { path: 'tareas-elim', 
+    loadChildren: './pages/tareas-elim/tareas-elim.module#TareasElimPageModule' 
+  }
+
+
 
 
 ];

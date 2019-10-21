@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController, NavController } from '@ionic/angular';
+import { Profes } from '../../allVars';
 
 @Component({
   selector: 'app-addprofesores',
@@ -7,9 +9,57 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddprofesoresPage implements OnInit {
 
-  constructor() { }
+  constructor(public alertController: AlertController, private navCtrl: NavController) { }
+
+  presionado: boolean;
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+
+      header: 'Alerta',
+      subHeader: 'Volver',
+      message: '¿Seguro que desea volver sin guardar cambios?',
+      buttons: [
+        {
+            text: 'OK',
+            handler: () => {
+              console.log('Confirm OK');
+              this.presionado = true;
+              this.navCtrl.navigateBack('/profesores');
+            }
+          },{
+            text: 'Cancelar',
+            role: 'cancel',
+            cssClass: 'secondary',
+            handler: () => {
+              this.presionado = false;
+            }
+          }
+      ]
+    });
+    
+
+    await alert.present();
+    
+    
+
+  }
+
+
 
   ngOnInit() {
   }
+  nombre: string ="";
+  clase: string ="";
+  correo: string ="";
 
+  profesoresConfirmar()
+  {
+
+    Profes.nameProfe.push(this.nombre);
+    Profes.claseProf.push(this.clase);
+    Profes.correo.push(this.correo);
+
+
+  }
 }

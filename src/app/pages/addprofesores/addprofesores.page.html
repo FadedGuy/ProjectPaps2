@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-<ion-button shape="round"[routerLink]="['/profesores']">
+<ion-button shape="round" (click)="presentAlert()">
   <ion-icon slot="start" name="arrow-dropleft"></ion-icon>
 </ion-button>
     <ion-title>
@@ -16,27 +16,18 @@
           <ion-input placeholder="Nombre" [(ngModel)]="name"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input placeholder="Descripción" [(ngModel)]="description"></ion-input>
+          <ion-input placeholder="Materia" [(ngModel)]="description"></ion-input>
         </ion-item>
-        <ion-item-divider></ion-item-divider>
-        <!--Fechas-->
         <ion-item>
-          <ion-label>Fecha de entrega</ion-label>
-          <ion-datetime done-text="Listo" cancel-text="Cancelar" value="string" placeholder="Selecciona una fecha" [(ngModel)]="date"></ion-datetime>
-        </ion-item>
-        <!--Horas-->
-        <ion-item>
-          <ion-label> Hora de entrega</ion-label>
-          <ion-datetime done-text="Listo" cancel-text="Cancelar" display-format="h:mm A" picker-format="h:mm A" value="string" placeholder="Selecciona una hora" [(ngModel)]="time"></ion-datetime>
-        </ion-item>
-        <!--Materias-->
-        <!--Kevin, no se si pueda obtener la info para opciones de lo que metan en el horario-->
+            <ion-input placeholder="Correo" [(ngModel)]="correo"></ion-input>
+          </ion-item>
+        
         <ion-item>
           
         </ion-item>
         <!--Boton confirmar todo listo-->
         <ion-fab vertical="bottom" horizontal="end" slot="fixed" size="small">
-            <ion-fab-button (click)="tareasConfirmar()" [routerLink]="['/menu']">
+            <ion-fab-button (click)= "profesoresConfirmar()" [routerLink]="['/profesores']">
               <!--Falta hacer la funcion para que tome los datos de lo arriba y cree la tarea-->
               <ion-icon name="checkmark"></ion-icon>
             </ion-fab-button>

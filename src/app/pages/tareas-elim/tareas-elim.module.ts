@@ -2,16 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-import { AlertController } from '@ionic/angular';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TareasPage } from './tareas.page';
+import { TareasElimPage } from './tareas-elim.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: TareasPage
+    component: TareasElimPage
   }
 ];
 
@@ -22,12 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [TareasPage]
+  declarations: [TareasElimPage]
 })
-
-
-export class TareasPageModule {
-
-  constructor(){}
-
-}
+export class TareasElimPageModule {}

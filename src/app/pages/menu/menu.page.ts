@@ -1,6 +1,8 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { arrTareasString } from '../../allVars';
+import { arrTareasString, Tareas } from '../../allVars';
+import { RouterLink } from '@angular/router';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-list',
@@ -17,11 +19,9 @@ export class MenuPage implements OnInit {
   ];
 
   items: any;
+  i: number = 0;
 
-  constructor() {
-    //arrTareasString.tareaName.push("hola");
-    //arrTareasString.tareaName.push("hola1");
-    //arrTareasString.tareaName.push("hola2");
+  constructor(private navCtrl: NavController) {
     this.items = arrTareasString.tareaName;
   }
   openModal()
@@ -40,8 +40,15 @@ export class MenuPage implements OnInit {
 
   ngOnInit() {
   }
-  // add back when alpha.4 is out
-  // navigate(item) {
-  //   this.router.navigate(['/list', JSON.stringify(item)]);
-  // }
+  
+  hola(index){
+    arrTareasString.indexSel = index;
+    //0 En este caso pero deberia de ser el index de la opcion seleccionada
+    this.navCtrl.navigateBack('/show-tareas');
+  }
+
+  clickDel(){
+    alert("Selecciona la tarea que desees eliminar");
+    
+  }
 }

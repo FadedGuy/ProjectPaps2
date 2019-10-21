@@ -2,16 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-import { AlertController } from '@ionic/angular';
 
 import { IonicModule } from '@ionic/angular';
 
-import { TareasPage } from './tareas.page';
+import { ShowTareasPage } from './show-tareas.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: TareasPage
+    component: ShowTareasPage
   }
 ];
 
@@ -22,12 +21,6 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [TareasPage]
+  declarations: [ShowTareasPage]
 })
-
-
-export class TareasPageModule {
-
-  constructor(){}
-
-}
+export class ShowTareasPageModule {}

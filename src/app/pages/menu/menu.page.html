@@ -21,7 +21,7 @@
         </ion-fab-button>
         <!--Opciones del botón-->
         <ion-fab-list side="top">
-          <ion-fab-button>
+          <ion-fab-button (click)="clickDel()">
              <ion-icon name="trash"></ion-icon>
           </ion-fab-button>
           <ion-fab-button [routerLink]="['/tareas']">
@@ -38,15 +38,11 @@
     <!--Lista de tareas-->
     
   <ion-list>
-    <ion-item *ngFor="let item of items">
+    <ion-item ion-item *ngFor="let item of items; let i = index">
         <ion-item-sliding>
           
-          <ion-item>
-              <ion-checkbox slot="start"></ion-checkbox>
-              <ion-label>
-                  {{item}}
-                 <!--- <p>{{item.descripcionTareas}}</p>-->
-              </ion-label>
+          <ion-item (click)="hola(i)">
+            {{item}}
           </ion-item>
           
           <ion-item-options>
