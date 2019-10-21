@@ -1,8 +1,8 @@
 <ion-header>
-  <ion-toolbar>
-<ion-button shape="round"[routerLink]="['/horario']">
-  <ion-icon slot="start" name="arrow-dropleft"></ion-icon>
-</ion-button>
+    <ion-toolbar>
+  <ion-button shape="round" (click)="presentAlert()"  >
+    <ion-icon slot="start" name="arrow-dropleft"></ion-icon>
+  </ion-button>
     <ion-title>
       Nueva clase
     </ion-title>
@@ -14,28 +14,45 @@
         <ion-item> 
           <ion-input placeholder="Clase" [(ngModel)]="clase"></ion-input>
         </ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
         <ion-item> 
-          <ion-input placeholder="Hora de inicio 00:00" [(ngModel)]="hora"></ion-input>
+          <ion-input placeholder="Inicia 00:00" [(ngModel)]="hora"></ion-input>
           </ion-item>
-        <p>Seleccione el día</p>
-          <ion-button shape="round"(click)=Lanadir(); [routerLink]="['/horario']">
+          </ion-col>
+          <ion-col>
+          <ion-item> 
+            <ion-input placeholder="Termina 00:00" [(ngModel)]="horaf"></ion-input>
+            </ion-item>
+            </ion-col>
+            </ion-row>
+            </ion-grid>
+        <p>Seleccione el o los día(s)</p>
+          <ion-button shape="round"(click)=Lanadir();>
       Lunes
     </ion-button>
 
-    <ion-button shape="round"(click)=MAanadir(); [routerLink]="['/horario']">
+    <ion-button shape="round"(click)=MAanadir();>
       Martes
     </ion-button>
 
-    <ion-button shape="round"(click)=MIanadir(); [routerLink]="['/horario']">
+    <ion-button shape="round"(click)=MIanadir(); >
       Miercoles
     </ion-button>
 
-    <ion-button shape="round"(click)=Janadir(); [routerLink]="['/horario']">
+    <ion-button shape="round"(click)=Janadir(); >
       Jueves
     </ion-button>
 
-    <ion-button shape="round"(click)=Vanadir(); [routerLink]="['/horario']">
+    <ion-button shape="round"(click)=Vanadir(); >
       Viernes
     </ion-button>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" size="small">
+        <ion-fab-button>
+          <ion-icon name="checkmark" [routerLink]="['/horario']"></ion-icon>
+        </ion-fab-button>
+        </ion-fab>
 </ion-content>
 

@@ -17,6 +17,11 @@ export class HorarioPage implements OnInit {
   MIHitems: any;
   JHitems:any;
   VHitems: any;
+  LHFitems: any;
+  MAHFitems: any;
+  MIHFitems: any;
+  JHFitems:any;
+  VHFitems: any;
   constructor() { 
     this.Litems = Clase.LclaseArr;
     this.MAitems = Clase.MAclaseArr;
@@ -29,6 +34,12 @@ export class HorarioPage implements OnInit {
     this.MIHitems = Clase.MIhoraArr;
     this.JHitems = Clase.JhoraArr;
     this.VHitems = Clase.VhoraArr;
+
+    this.LHFitems = Clase.LhoraFArr;
+    this.MAHFitems = Clase.MAhoraFArr;
+    this.MIHFitems = Clase.MIhoraFArr;
+    this.JHFitems = Clase.JhoraFArr;
+    this.VHFitems = Clase.VhoraFArr;
   }
 
   ngOnInit() {
