@@ -36,8 +36,8 @@ export class arrTareasString{
     static indexSel: number = 0;
 }
 
-export class Profesores{
-    nameProfe = "";
-    claseProf = "";
-    correo = "";
+export class Profes{
+    static nameProfe: string []=[] ;
+    static claseProf: string []=[] ;
+    static correo: string []=[] ;
 }

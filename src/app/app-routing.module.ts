@@ -35,10 +35,10 @@ const routes: Routes = [
   },
   { path: 'show-tareas', 
     loadChildren: () => import('./show-tareas/show-tareas.module').then(m => m.ShowTareasPageModule)
-},  { path: 'tareas-elim', loadChildren: './pages/tareas-elim/tareas-elim.module#TareasElimPageModule' }
+  { path: 'tareas-elim', loadChildren: './pages/tareas-elim/tareas-elim.module#TareasElimPageModule' }
+},
 
 
-  
 
 
 ];
