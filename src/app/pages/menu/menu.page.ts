@@ -19,7 +19,7 @@ export class MenuPage implements OnInit {
   ];
 
   items: any;
-  i: number = 0;
+  i: number;
 
   constructor(private navCtrl: NavController) {
     this.items = arrTareasString.tareaName;
@@ -43,6 +43,7 @@ export class MenuPage implements OnInit {
   
   hola(index){
     arrTareasString.indexSel = index;
+    console.log(arrTareasString.indexSel);
     //0 En este caso pero deberia de ser el index de la opcion seleccionada
     this.navCtrl.navigateBack('/show-tareas');
   }
