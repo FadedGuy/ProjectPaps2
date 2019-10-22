@@ -130,7 +130,6 @@ export class TareasPage implements OnInit {
     arrTareasString.anio.push(this.year);
     arrTareasString.hora.push(this.hour);
     arrTareasString.minuto.push(this.minute);
-    
     //De alguna manera deberia de regresarte a la pagina de tareas pero paso de hacerlo
   }
 

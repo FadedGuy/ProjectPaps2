@@ -47,8 +47,41 @@ export class MenuPage implements OnInit {
     this.navCtrl.navigateBack('/show-tareas');
   }
 
-  clickDel(){
-    alert("Selecciona la tarea que desees eliminar");
-    
+  clickDel(index){
+    /*arrTareasString.tareaName = arrTareasString.tareaName.splice(index, 1);
+    console.log(arrTareasString.tareaName);*/
+    let lenghtmenos = arrTareasString.tareaName.length-1;
+
+    let auxName: string = arrTareasString.tareaName[index];
+    let auxDescripcion: string = arrTareasString.descripcionTareas[index];
+    let auxDia: string = arrTareasString.dia[index];
+    let auxMes: string = arrTareasString.mes[index];
+    let auxAnio: string = arrTareasString.anio[index];
+    let auxHora: string = arrTareasString.hora[index];
+    let auxMinuto: string = arrTareasString.minuto[index];
+
+    arrTareasString.tareaName[index] = arrTareasString.tareaName[lenghtmenos];  
+    arrTareasString.descripcionTareas[index] = arrTareasString.descripcionTareas[lenghtmenos];
+    arrTareasString.dia[index] = arrTareasString.dia[lenghtmenos];
+    arrTareasString.mes[index] = arrTareasString.mes[lenghtmenos];
+    arrTareasString.anio[index] = arrTareasString.anio[lenghtmenos];
+    arrTareasString.hora[index] = arrTareasString.hora[lenghtmenos];
+    arrTareasString.minuto[index] = arrTareasString.minuto[lenghtmenos];
+
+    arrTareasString.tareaName[lenghtmenos] = auxName;
+    arrTareasString.descripcionTareas[lenghtmenos] = auxDescripcion;
+    arrTareasString.dia[lenghtmenos] = auxDia;
+    arrTareasString.mes[lenghtmenos] = auxMes;
+    arrTareasString.anio[lenghtmenos] = auxAnio;
+    arrTareasString.hora[lenghtmenos] = auxHora;
+    arrTareasString.minuto[lenghtmenos] = auxMinuto;
+
+    arrTareasString.tareaName.pop();
+    arrTareasString.descripcionTareas.pop();
+    arrTareasString.dia.pop();
+    arrTareasString.mes.pop();
+    arrTareasString.anio.pop();
+    arrTareasString.hora.pop();
+    arrTareasString.minuto.pop();
   }
 }
