@@ -150,6 +150,7 @@ export class TareasPage implements OnInit {
     } else{
       console.log("No se ha ingresado fecha de entrega");
       this.faltaFecha();
+      this.day == "0";
     }
     
     if(this.time != ""){
@@ -177,6 +178,7 @@ export class TareasPage implements OnInit {
     }
     else{
       console.log("No se ha ingresado fecha de entrega");
+      this.hour == "0";
       /*if (this.confirmar==false)
       {
         this.faltaFecha();
