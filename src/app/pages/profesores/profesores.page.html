@@ -35,36 +35,26 @@
 
       </ion-fab>
 
-    <!--Lista de profes-->
-      <ion-list>
-        <ion-item ion-item *ngFor="let item of arreglo | keyvalue ">
-
-          <ion-icon name="person" size="large" slot="start"></ion-icon>
-          <ion-label>
-            <h2>{{item.key}} </h2>
-            <p>{{item.value}}</p>
-          </ion-label>
-
-        </ion-item>
-    </ion-list>
-
-
-    <!--ion-item>
-      <ion-item-divider>
-        PROFESOR
-      </ion-item-divider>
-
-      <ion-item>
-        <ion-label ion-item *ngFor="let profes of profess">{{profes}}</ion-label>
-      </ion-item>
-
-      <ion-item-divider>
-        <ion-label *ngFor="let materias of materiass">{{materias}}</ion-label>
-      </ion-item-divider>
-
-    <--/ion-item>-->
-
-
-
+    <!--Lista de tareas-->
+        <ion-list>
+            <ion-grid>
+                <ion-row>
+                  <ion-col>
+            <ion-item-group reorder="true" (ionItemReorder)="reorderItems($event)">
+                <p align="center"> <ion-icon name="contact"></ion-icon></p>
+              <ion-item *ngFor="let profes of profess">{{ profes }}</ion-item>
+            </ion-item-group>
+            </ion-col>
+            <ion-col>
+                <p align="center"> <ion-icon name="book"></ion-icon> </p>
+                <ion-item color="primary" *ngFor="let materias of materiass">{{ materias }}</ion-item>
+            </ion-col>
+            <ion-col>
+               <p align="center"> <ion-icon  name="call"></ion-icon> </p>
+              <ion-item color="secondary" *ngFor="let correos of correoss">{{ correos }}</ion-item>
+          </ion-col>
+            </ion-row>
+            </ion-grid>
+          </ion-list>
 </ion-content>
 

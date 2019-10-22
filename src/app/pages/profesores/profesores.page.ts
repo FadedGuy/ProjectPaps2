@@ -14,18 +14,14 @@ export class ProfesoresPage implements OnInit {
   materiass: any;
   correoss: any;
 
- 
+  allInfos:any;
 
-
-  
   constructor()
   {
     this.profess = Profes.nameProfe;
     this.materiass = Profes.claseProf;
     this.correoss = Profes.correo;
-
-
-
+    this.allInfos= Profes.allInfo;
    }
 
 
