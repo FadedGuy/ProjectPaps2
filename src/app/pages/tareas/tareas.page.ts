@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Tareas, arrTareas, arrTareasString } from '../../allVars';
 import { Router } from '@angular/router';
 import { AlertController, NavController } from '@ionic/angular';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 
 
@@ -45,8 +46,61 @@ export class TareasPage implements OnInit {
     
 
   }
+  async faltaFecha() {
+    const alert = await this.alertController.create({
 
+      header: 'Fecha faltante',
+      message: '¿Seguro que desea guardar sin añadir fecha de entrega?',
+      buttons: [
+        {
+            text: 'OK',
+            handler: () => {
+              console.log('Confirm OK');
+              this.confirmar=true;
+              this.presionado = true;
+              this.navCtrl.navigateBack('/menu');
+              this.tareaAlert();
+            }
+          },{
+            text: 'Volver',
+            role: 'cancel',
+            cssClass: 'secondary',
+            handler: () => {
+              this.presionado = false;
+            }
+          }
+      ]
+    });
+    
 
+    await alert.present();
+
+    
+
+  }
+  async tareaAlert() {
+    const alert = await this.alertController.create({
+
+      header: 'Tarea',
+      message: 'La tarea ' + this.name +  ' se ha registrado con éxito',
+      buttons: [
+        {
+            text: 'OK',
+            handler: () => {
+              console.log('Confirm OK');
+              this.presionado = true;
+              this.navCtrl.navigateBack('/menu');
+            }
+          }
+      ]
+    });
+    
+
+    await alert.present();
+
+    
+
+  }
 
 
   router: Router;
@@ -58,7 +112,7 @@ export class TareasPage implements OnInit {
 
   guion = 0; 
   data = "";
-
+  confirmar: boolean =false;
   day: string = "";
   month: string = "";
   year: string = "";
@@ -86,6 +140,7 @@ export class TareasPage implements OnInit {
               break;
           }
           this.data = "";
+          this.confirmar=true;
         }
         else{
           this.data += this.date[i];
@@ -94,6 +149,7 @@ export class TareasPage implements OnInit {
   
     } else{
       console.log("No se ha ingresado fecha de entrega");
+      this.faltaFecha();
     }
     
     if(this.time != ""){
@@ -111,6 +167,7 @@ export class TareasPage implements OnInit {
               break;
           }
           this.data = "";
+          this.confirmar=true;
         }
         else{
           this.data += this.time[i];
@@ -120,9 +177,13 @@ export class TareasPage implements OnInit {
     }
     else{
       console.log("No se ha ingresado fecha de entrega");
+      /*if (this.confirmar==false)
+      {
+        this.faltaFecha();
+      }*/
     }
     
-    alert("Se ha registrado la tarea " + this.name + " de manera exitosa!");
+    
     arrTareasString.tareaName.push(this.name);
     arrTareasString.descripcionTareas.push(this.description);
     arrTareasString.dia.push(this.day);
@@ -130,6 +191,10 @@ export class TareasPage implements OnInit {
     arrTareasString.anio.push(this.year);
     arrTareasString.hora.push(this.hour);
     arrTareasString.minuto.push(this.minute);
+    if(this.confirmar==true)
+    {
+      this.tareaAlert();
+    }
     
     //De alguna manera deberia de regresarte a la pagina de tareas pero paso de hacerlo
   }
