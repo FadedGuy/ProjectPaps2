@@ -43,7 +43,11 @@ export class NuevaClasePage implements OnInit {
    }
   ngOnInit() {
   }
-colour:string= 'tertiary';
+colourL:string= 'primary';
+colourMA:string= 'primary';
+colourMI:string= 'primary';
+colourJ:string= 'primary';
+colourV:string= 'primary';
 hora :string;
 horaf :any;
 clase:any;
@@ -113,6 +117,7 @@ Horaf(horaf)
 }
 
 Lanadir(hora,horaf){
+  this.colourL='secondary';
   console.log(this);
   Clase.LhoraArr.push(this.Hora(hora));
   Clase.LhoraFArr.push(this.Horaf(horaf));
@@ -120,7 +125,7 @@ Lanadir(hora,horaf){
   console.log(Clase.LclaseArr);
 }
 MAanadir(hora,horaf){
-  this.colour='success';
+  this.colourMA='secondary';
   console.log(this);
   Clase.MAhoraArr.push(this.Hora(hora));
   Clase.MAhoraFArr.push(this.Horaf(horaf));
@@ -128,6 +133,7 @@ MAanadir(hora,horaf){
   console.log(Clase.MAclaseArr);
 }
 MIanadir(hora,horaf){
+  this.colourMI='secondary';
   console.log(this);
   Clase.MIhoraArr.push(this.Hora(hora));
   Clase.MIhoraFArr.push(this.Hora(horaf));
@@ -135,6 +141,7 @@ MIanadir(hora,horaf){
   console.log(Clase.MIclaseArr);
 }
 Janadir(hora,horaf){
+  this.colourJ='secondary';
   console.log(this);
   Clase.JhoraArr.push(this.Hora(hora));
   Clase.JhoraFArr.push(this.Hora(horaf));
@@ -142,6 +149,7 @@ Janadir(hora,horaf){
   console.log(Clase.JclaseArr);
 }
 Vanadir(hora,horaf){
+  this.colourV='secondary';
   console.log(this);
   Clase.VhoraArr.push(this.Hora(hora));
   Clase.VhoraFArr.push(this.Hora(horaf));
