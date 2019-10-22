@@ -77,9 +77,9 @@ export class MenuPage implements OnInit {
     arrTareasString.minuto[lenghtmenos] = auxMinuto;
 
     arrTareasString.tareaName.pop();
-    arrTareasString.descripcionTareas.pop();
-    arrTareasString.dia.pop();
+    arrTareasString.descripcionTareas.pop();   
     arrTareasString.mes.pop();
+    arrTareasString.dia.pop();
     arrTareasString.anio.pop();
     arrTareasString.hora.pop();
     arrTareasString.minuto.pop();
