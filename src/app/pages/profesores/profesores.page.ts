@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Profes } from '../../allVars';
+import { NavController } from '@ionic/angular';
 
 
 @Component({
@@ -9,14 +10,12 @@ import { Profes } from '../../allVars';
 })
 export class ProfesoresPage implements OnInit {
 
-
   profess: any;
   materiass: any;
   correoss: any;
-
   allInfos:any;
 
-  constructor()
+  constructor(private navCtrl: NavController)
   {
     this.profess = Profes.nameProfe;
     this.materiass = Profes.claseProf;
@@ -24,10 +23,14 @@ export class ProfesoresPage implements OnInit {
     this.allInfos= Profes.allInfo;
    }
 
-
-
-
   ngOnInit() {
   }
 
+  resetProfesores(){
+    Profes.nameProfe = [];
+    Profes.claseProf = [];
+    Profes.correo = [];
+    Profes.allInfo = [];
+    this.navCtrl.navigateRoot("/home");
+  }
 }
