@@ -14,7 +14,7 @@
     (ionScrollStart)="logScrollStart()"
     (ionScroll)="logScrolling($event)"
     (ionScrollEnd)="logScrollEnd()">
-    <!-- Botón añadir tarea -->
+    <!-- Botón añadir profe -->
     <ion-fab vertical="bottom" horizontal="end" slot="fixed" size="small">
         <ion-fab-button>
           <ion-icon name="create"></ion-icon>
@@ -35,21 +35,60 @@
 
       </ion-fab>
 
+<<<<<<< HEAD
     <!--Lista de tareas-->
+        <ion-list>
+            <ion-grid>
+                <ion-row>
+                  <ion-col>
+            <ion-item-group reorder="true" (ionItemReorder)="reorderItems($event)">
+                <p align="center"> <ion-icon name="contact"></ion-icon></p>
+              <ion-item *ngFor="let profes of profess">{{ profes }}</ion-item>
+            </ion-item-group>
+            </ion-col>
+            <ion-col>
+                <p align="center"> <ion-icon name="book"></ion-icon> </p>
+                <ion-item color="primary" *ngFor="let materias of materiass">{{ materias }}</ion-item>
+            </ion-col>
+            <ion-col>
+               <p align="center"> <ion-icon  name="call"></ion-icon> </p>
+              <ion-item color="secondary" *ngFor="let correos of correoss">{{ correos }}</ion-item>
+          </ion-col>
+            </ion-row>
+            </ion-grid>
+          </ion-list>
+=======
+    <!--Lista de profes-->
       <ion-list>
-    <ion-item ion-item *ngFor="let profes of profess">
-      <!--Carlos  3 fors anidados estan creando columnas que no queremos y haciendo un desorden enorme :(, voy a intentar arreglarlo -Dany-->
-      <!--ion-item ion-item *ngFor="let materia  of materiass"--> 
-          <!--ion-item ion-item *ngFor="let correos  of correoss"--> 
-      <ion-icon name="person" size="large" slot="start"></ion-icon>
-      <ion-label>
-        <h2>{{profes}}</h2>
-        <h3>{{materia}}</h3>
-        <p>{{correos}}</p>
-      </ion-label>
-        <!--/ion-item-->
-      <!--/ion-item-->
-    </ion-item>
+        <ion-item ion-item *ngFor="let item of arreglo | keyvalue ">
+
+          <ion-icon name="person" size="large" slot="start"></ion-icon>
+          <ion-label>
+            <h2>{{item.key}} </h2>
+            <p>{{item.value}}</p>
+          </ion-label>
+
+        </ion-item>
     </ion-list>
+
+
+    <!--ion-item>
+      <ion-item-divider>
+        PROFESOR
+      </ion-item-divider>
+
+      <ion-item>
+        <ion-label ion-item *ngFor="let profes of profess">{{profes}}</ion-label>
+      </ion-item>
+
+      <ion-item-divider>
+        <ion-label *ngFor="let materias of materiass">{{materias}}</ion-label>
+      </ion-item-divider>
+
+    <--/ion-item>
+
+
+
 </ion-content>
+>>>>>>> 746514e3cc6c88b6f4c12f955a5e3a26ae688c18
 
