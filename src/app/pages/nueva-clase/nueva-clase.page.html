@@ -17,35 +17,36 @@
         <ion-grid>
           <ion-row>
             <ion-col>
-        <ion-item> 
-          <ion-input placeholder="Inicia 00:00" [(ngModel)]="hora"></ion-input>
-          </ion-item>
+                <ion-item>
+                    
+                    <ion-datetime done-text="Listo" cancel-text="Cancelar" display-format="h:mm A" picker-format="h:mm A" value="string" placeholder="Hora de inicio" [(ngModel)]="hora"></ion-datetime>
+                </ion-item>
           </ion-col>
           <ion-col>
-          <ion-item> 
-            <ion-input placeholder="Termina 00:00" [(ngModel)]="horaf"></ion-input>
+            <ion-item>
+                <ion-datetime done-text="Listo" cancel-text="Cancelar" display-format="h:mm A" picker-format="h:mm A" value="string" placeholder="Hora final" [(ngModel)]="horaf"></ion-datetime>
             </ion-item>
             </ion-col>
             </ion-row>
             </ion-grid>
         <p>Seleccione el o los día(s)</p>
-          <ion-button shape="round"(click)=Lanadir();>
+          <ion-button shape="round"(click)=Lanadir(hora,horaf);>
       Lunes
     </ion-button>
 
-    <ion-button shape="round"(click)=MAanadir();>
+    <ion-button color="{{colour}}" shape="round"(click)=MAanadir(hora,horaf);>
       Martes
     </ion-button>
 
-    <ion-button shape="round"(click)=MIanadir(); >
+    <ion-button shape="round"(click)=MIanadir(hora,horaf); >
       Miercoles
     </ion-button>
 
-    <ion-button shape="round"(click)=Janadir(); >
+    <ion-button shape="round"(click)=Janadir(hora,horaf); >
       Jueves
     </ion-button>
 
-    <ion-button shape="round"(click)=Vanadir(); >
+    <ion-button shape="round"(click)=Vanadir(hora,horaf); >
       Viernes
     </ion-button>
 
