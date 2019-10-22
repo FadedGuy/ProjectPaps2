@@ -43,9 +43,8 @@ export class MenuPage implements OnInit {
   
   hola(index){
     arrTareasString.indexSel = index;
-    console.log(arrTareasString.indexSel);
     //0 En este caso pero deberia de ser el index de la opcion seleccionada
-    this.navCtrl.navigateBack('/show-tareas');
+    this.navCtrl.navigateRoot('/show-tareas');
   }
 
   clickDel(index){

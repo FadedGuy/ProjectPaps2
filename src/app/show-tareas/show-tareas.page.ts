@@ -1,5 +1,6 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
-import { Tareas, arrTareas, arrTareasString } from '../allVars';
+import { Component, OnInit} from '@angular/core';
+import { arrTareasString } from '../allVars';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-show-tareas',
@@ -7,6 +8,7 @@ import { Tareas, arrTareas, arrTareasString } from '../allVars';
   styleUrls: ['./show-tareas.page.scss'],
 })
 export class ShowTareasPage implements OnInit {
+  
   name = arrTareasString.tareaName[arrTareasString.indexSel];
   descripcion = arrTareasString.descripcionTareas[arrTareasString.indexSel];
   dia = arrTareasString.dia[arrTareasString.indexSel];
@@ -14,11 +16,13 @@ export class ShowTareasPage implements OnInit {
   anio = arrTareasString.anio[arrTareasString.indexSel];
   hora = arrTareasString.hora[arrTareasString.indexSel];
   minuto = arrTareasString.minuto[arrTareasString.indexSel];
-
   
-  constructor() {}
+  constructor(private navCtrl: NavController) {}
 
-  ngOnInit() {
+  ngOnInit() {  
   }
 
+  regreso(){
+    this.navCtrl.navigateBack('/menu');
+  }
 }
