@@ -11,8 +11,62 @@
 
 
 <ion-content>
-  <p> Tarea: {{name}}</p>
-  <p> Descripción: {{descripcion}}</p>
-  <p> Fecha de entrega: {{dia}} / {{mes}} / {{anio}} </p>
-  <p> Hora: {{hora}} : {{minuto}}</p>
+
+<ion-list>
+<ion-item-group>
+
+    <ion-item-divider *ngIf= "name!=NULL">
+        <ion-label align="center">
+            <ion-icon size="small" name="book"></ion-icon>TAREA
+        </ion-label>
+      </ion-item-divider>
+
+    <ion-item lines="none" *ngIf= "name!=NULL">
+      <ion-label>
+        {{name}}
+      </ion-label>
+    </ion-item>
+ 
+    <ion-item-divider *ngIf= "descripcion!=NULL">
+        <ion-label align="center">
+            <ion-icon size="small" name="reorder"></ion-icon>DESCRIPCIÓN
+        </ion-label>
+      </ion-item-divider>
+
+    <ion-item lines="none" *ngIf= "descripcion!=NULL">
+        <ion-label>
+          {{descripcion}}
+        </ion-label>
+      </ion-item>
+
+
+      <ion-item-divider *ngIf= "dia!= 0">  
+        <ion-label align="center">
+            <ion-icon size= "small"name="calendar"></ion-icon> FECHA DE ENTREGA
+        </ion-label>
+        </ion-item-divider>
+
+
+    <ion-item lines="none" *ngIf= "dia!= 0">
+        <ion-label>
+            {{dia}} / {{mes}} / {{anio}} 
+        </ion-label>
+    </ion-item>
+
+    <ion-item-divider *ngIf= "hora!= 0">
+        <ion-label align="center">
+            <ion-icon size= "small" name="alarm"></ion-icon>HORA
+        </ion-label>
+    </ion-item-divider>
+
+    <ion-item lines="none" *ngIf= "hora!= 0">
+        <ion-label>
+          {{hora}} : {{minuto}}
+        </ion-label>
+      </ion-item>
+ 
+      
+</ion-item-group>
+</ion-list>
+      
 </ion-content>
