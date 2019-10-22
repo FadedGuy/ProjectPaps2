@@ -44,9 +44,9 @@ export class NuevaClasePage implements OnInit {
   ngOnInit() {
   }
   
-hora :any;
-horaf :any;
-clase:any;
+hora :string;
+horaf :string;
+clase:string;
 
 
 Lanadir(){
