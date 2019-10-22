@@ -195,7 +195,6 @@ export class TareasPage implements OnInit {
     {
       this.tareaAlert();
     }
-    
     //De alguna manera deberia de regresarte a la pagina de tareas pero paso de hacerlo
   }
 

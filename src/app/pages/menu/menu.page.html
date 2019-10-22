@@ -21,9 +21,6 @@
         </ion-fab-button>
         <!--Opciones del botón-->
         <ion-fab-list side="top">
-          <ion-fab-button (click)="clickDel()">
-             <ion-icon name="trash"></ion-icon>
-          </ion-fab-button>
           <ion-fab-button [routerLink]="['/tareas']">
               <ion-icon name="add" ></ion-icon>
            </ion-fab-button>
@@ -46,7 +43,7 @@
           </ion-item>
           
           <ion-item-options>
-            <button color="danger" >Borrar<ion-icon name="trash"></ion-icon></button>
+            <button color="danger" (click)="clickDel(i)">Borrar<ion-icon name="trash"></ion-icon></button>
           </ion-item-options>
           
           </ion-item-sliding>
