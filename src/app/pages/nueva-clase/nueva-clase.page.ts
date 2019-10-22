@@ -48,8 +48,6 @@ hora :any;
 horaf :any;
 clase:any;
 
-  clase: any;
-  hora: any;
 
 Lanadir(){
   console.log(this);

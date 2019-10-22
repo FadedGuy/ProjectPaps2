@@ -60,3 +60,5 @@ export class Profes{
     static claseProf: string []=[] ;
     static correo: string []=[] ;
 }
+
+
