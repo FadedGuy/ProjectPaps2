@@ -13,8 +13,7 @@ export class NuevaClasePage implements OnInit {
    async presentAlert() {
      const alert = await this.alertController.create({
    
-       header: 'Alerta',
-       subHeader: 'Volver',
+       header: 'Volver',
        message: '¿Seguro que desea volver sin guardar cambios?',
        buttons: [
          {
