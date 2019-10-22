@@ -9,7 +9,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content
+    [scrollEvents]="true"
+    (ionScrollStart)="logScrollStart()"
+    (ionScroll)="logScrolling($event)"
+    (ionScrollEnd)="logScrollEnd()">
 
   <ion-list>
     <ion-list-header>Lunes</ion-list-header>
