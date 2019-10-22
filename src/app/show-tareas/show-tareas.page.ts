@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { Tareas, arrTareas, arrTareasString } from '../allVars';
 
 @Component({
@@ -14,8 +14,9 @@ export class ShowTareasPage implements OnInit {
   anio = arrTareasString.anio[arrTareasString.indexSel];
   hora = arrTareasString.hora[arrTareasString.indexSel];
   minuto = arrTareasString.minuto[arrTareasString.indexSel];
+
   
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }
