@@ -60,6 +60,5 @@ export class AddprofesoresPage implements OnInit {
     Profes.claseProf.push(this.description);
     Profes.correo.push(this.correo);
 
-
   }
 }
